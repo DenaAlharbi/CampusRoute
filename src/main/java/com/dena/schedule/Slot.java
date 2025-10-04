@@ -1,28 +1,57 @@
 package com.dena.schedule;
-import java.util.*;
 
-abstract class Slot {
-    protected List<String> days;
-    protected String startTime;
-    protected String endTime;
-    protected String building;
-    protected String room;
+import java.util.List;
 
-    public Slot(List<String> days, String startTime, String endTime, String building, String room) {
+public class Slot {
+    private List<String> days;
+    private String startTime;
+    private String endTime;
+    private String building;
+    private String room;
+    private String activityType; // e.g., "LEC", "LAB", "COOP", etc.
+
+    public Slot(List<String> days, String startTime, String endTime,
+                String building, String room, String activityType) {
         this.days = days;
         this.startTime = startTime;
         this.endTime = endTime;
         this.building = building;
         this.room = room;
+        this.activityType = activityType;
     }
 
-    public List<String> getDays() { return days; }
-    public String getStartTime() { return startTime; }
-    public String getEndTime() { return endTime; }
-    public String getBuilding() { return building; }
-    public String getRoom() { return room; }
+    public List<String> getDays() {
+        return days;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public String getBuilding() {
+        return building;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public String getActivityType() {
+        return activityType;
+    }
+
+    @Override
+    public String toString() {
+        return activityType + " | " + building + " " + room +
+               " | " + startTime + " - " + endTime + " | Days: " + days;
+    }
 }
 
+/* 
 // ------------------- LectureSlot -------------------
 class LectureSlot extends Slot {
     public LectureSlot(List<String> days, String startTime, String endTime, String building, String room) {
@@ -64,4 +93,4 @@ class InternshipSlot extends Slot {
     }
 
     public String getCompany() { return company; }
-}
+}*/

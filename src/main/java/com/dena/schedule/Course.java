@@ -17,6 +17,9 @@ class Course {
     public void addSection(Section section) {
         sections.add(section);
     }
+    public String getTitle() {
+        return title;
+    }
 
     public List<Section> getSections() {
         return Collections.unmodifiableList(sections);

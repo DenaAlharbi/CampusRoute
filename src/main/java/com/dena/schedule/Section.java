@@ -22,31 +22,11 @@ class Section {
     public void addSlot(Slot slot) {
         slots.add(slot);
     }
+    public Course getCourse(){
+        return course;
+    }
 
     public List<Slot> getSlots() {
         return Collections.unmodifiableList(slots);
     }
-}
-
-// ------------------- Abstract Slot -------------------
-abstract class Slot {
-    protected List<String> days;
-    protected String startTime;
-    protected String endTime;
-    protected String building;
-    protected String room;
-
-    public Slot(List<String> days, String startTime, String endTime, String building, String room) {
-        this.days = days;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.building = building;
-        this.room = room;
-    }
-
-    public List<String> getDays() { return days; }
-    public String getStartTime() { return startTime; }
-    public String getEndTime() { return endTime; }
-    public String getBuilding() { return building; }
-    public String getRoom() { return room; }
 }
